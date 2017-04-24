@@ -10,11 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', function () {
-    return view('welcome');
+    $people = ['Taylor', 'Matt', 'Jeffrey'];
+
+    return view('welcome')->with(['people' => $people]); 
 });
 
-routes::get('about', function() {
-    return 'About Page';
-});
+Route::get('about', function() {
+    return view('pages.about'); //resources/views/pages/about.blade.php
+}); */
+
+Route::get('/', 'PagesController@home');
+Route::get('about', 'PagesController@about');
