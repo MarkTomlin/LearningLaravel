@@ -5,7 +5,7 @@
 
     @foreach ($cards as $card)
         <div>
-            {{ $card->title }}
+            <a href="http://localhost/project_name/public/cards/{{ $card->id }}">{{ $card->title }}</a>
         </div>
     @endforeach
 @stop
