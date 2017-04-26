@@ -21,14 +21,22 @@
             <h3>Add a New Note</h3>
 
             <form method="POST" action="{{route('cards.notes.post',['card_id'=>$card->id])}}">
+                {{ csrf_field() }}  <!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
                 <div class="form-group">
-                    <textarea name="body" class="form-control"></textarea>
+                    <textarea name="body" class="form-control">{{ old('body') }}</textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Note</button>
                 </div>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </form>
+
+            @if (count($errors))
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
 
         </div>
     </div>

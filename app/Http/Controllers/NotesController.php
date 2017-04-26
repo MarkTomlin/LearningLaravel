@@ -14,17 +14,17 @@ class NotesController extends Controller
         // $note->body = $request->body;
         // $card->notes()->save($note);
 
-        // $card->notes()->save(
-        //      new Note(['body' => $request ->body])
-        // );
-
-        // $card->notes()->create([
-        //  'body' => $request->body
-        // ]);
-
-        $note = new Note(['body' => $request->body]);
-        $note->body = $request->body;
-        $card->notes()->save($note);
+        // $note = new Note(['body' => $request->body]);
+        //$note->body = $request->body;
+        //$card->notes()->save($note);
+        $this->validate($request, [
+            'body' => 'required|min:10',
+            'email' => 'email|unique:users,email'
+        ]);
+        
+        $note = new Note($request->all());
+        //$note->by(Auth::user());
+        $card->addNote($note, 1);
 
         return back();
     }
