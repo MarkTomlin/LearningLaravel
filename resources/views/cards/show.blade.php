@@ -7,8 +7,13 @@
             
             <ul class="list-group">
                 @foreach ($card->notes as $note)
-                    <li class="list-group-item">{{ $note->body }}   &nbsp;&nbsp;&nbsp;&nbsp;  
-                    <a href="{{route('notes.edit.get',['note_id'=>$note->id])}}">EDIT</a> </li>
+                    <li class="list-group-item">
+                        {{ $note->body }}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Author: {{ $note->user->username }}
+                        <a href="{{route('notes.edit.get',['note_id'=>$note->id])}}" style="float:right">EDIT</a> 
+                    </li>
                 @endforeach
             </ul>
 
