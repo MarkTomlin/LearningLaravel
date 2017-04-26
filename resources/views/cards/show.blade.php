@@ -37,7 +37,9 @@
                     @endforeach
                 </ul>
             @endif
-
+            
+            <br /><br />
+            <a href="http://localhost/project_name/public/cards">Back to All Cards</a>
         </div>
     </div>
 @stop

@@ -16,6 +16,7 @@
     </form>
 
     <hr>
+    <a href="http://localhost/project_name/public/cards/{{ $note->card_id }}">GO BACK TO CARD </a>
 @stop
 
 <!-- /notes/{{ $note->id }}/ -->
