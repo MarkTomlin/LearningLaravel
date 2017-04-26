@@ -31,3 +31,8 @@ Route::post('/cards/{card}/notes', 'NotesController@store')->name('cards.notes.p
 
 Route::get('notes/{note}/edit', 'NotesController@edit')->name('notes.edit.get');
 Route::patch('/notes/{note}', 'NotesController@update')->name('notes.edit.patch');
+
+Route::auth();
+
+Route::get('/dashboard', 'HomeController@index');
+
