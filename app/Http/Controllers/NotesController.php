@@ -28,4 +28,17 @@ class NotesController extends Controller
 
         return back();
     }
+
+    public function edit(Note $note)
+    {
+        return view('notes.edit', compact('note'));
+    }
+
+    public function update(Request $request, Note $note)
+    {
+        // dd('hit');  // test to see if method accessed
+        $note->update($request->all());
+
+        return back();
+    }
 }
