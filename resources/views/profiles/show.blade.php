@@ -5,7 +5,7 @@
         <div class="col-md-6 col-md-offset-3">
             <h1>{{ $profile->fname }} {{ $profile->lname }}'s Profile Page</h1>
 
-            <form method="POST" action="{{route('profile.patch',['profile_id'=>$profile->id])}}">
+            <form method="POST" action="{{route('profile.patch',['profile_id'=>$profile->id])}}" enctype="multipart/form-data">
                 {{ method_field('PATCH')}}
 
                 <div class="form-group">
@@ -21,6 +21,11 @@
                     <input type="email" class="form-control" name="email" placeholder="{{ $profile->email }}">
                 </div>
                 <div class="form-group">
+                    <label for="fileToUpload">Profile Image:</label>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+                <div class="form-group">
+                    <br /> <br />
                     <button type="submit" class="btn btn-primary">Update Profile</button>
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
