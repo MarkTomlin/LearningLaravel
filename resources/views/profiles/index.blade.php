@@ -5,7 +5,7 @@
 
     @foreach ($profiles as $profile)
         <div>
-            <a href="http://localhost/project_name/public/profiles/{{ $profile->id }}">
+            <a href="http://localhost/project_name/public/profiles/{{ $profile->id }}/view">
                 {{ $profile->fname }} {{ $profile->lname }}
             </a>
         </div>

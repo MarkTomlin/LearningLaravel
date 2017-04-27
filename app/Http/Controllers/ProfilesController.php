@@ -22,4 +22,15 @@ class ProfilesController extends Controller
         $profile = $profiles->find($profileid);
         return view('profiles.show', compact('profile'));
     }
+
+    public function update(Request $request, Profile $profile)
+    {
+        // dd('hit');  // test to see if method accessed
+        //dump($request); die;
+        //$profile = Profile::find($profile);
+        //dump($profile);die;
+        $profile->update($request->all());
+
+        return back();
+    }
 }

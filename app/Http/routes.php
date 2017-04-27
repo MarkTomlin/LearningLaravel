@@ -62,5 +62,6 @@ Route::auth();
 Route::get('/dashboard', 'HomeController@index');
 
 Route::get('profiles', 'ProfilesController@index');
-Route::get('profiles/{profileid}', 'ProfilesController@show');
+Route::get('profiles/{profileid}/view', 'ProfilesController@show');
+Route::patch('profiles/{profile}', 'ProfilesController@update')->name('profile.patch');
 
