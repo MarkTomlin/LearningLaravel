@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function __contruct()
     {
-        $this->middleware('admin');
+       // $this->middleware('admin');
     }
     /**
      * Show the application dashboard.

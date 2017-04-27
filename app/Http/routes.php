@@ -61,3 +61,6 @@ Route::auth();
 
 Route::get('/dashboard', 'HomeController@index');
 
+Route::get('profiles', 'ProfilesController@index');
+Route::get('profiles/{profileid}', 'ProfilesController@show');
+
