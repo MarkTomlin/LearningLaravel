@@ -9,6 +9,7 @@ class PagesController extends Controller
     {
         $people = ['Taylor', 'Matt', 'Jeffrey'];
 
+
         return view('welcome')->with(['people' => $people]);
     }
 

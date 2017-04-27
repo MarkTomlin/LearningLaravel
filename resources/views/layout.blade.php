@@ -9,7 +9,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('css/app.css')}}">-->
-
+    <link rel="stylesheet" href="http://localhost/project_name/public/css/app.css">
     @yield('header')
 </head>
 

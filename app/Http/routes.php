@@ -1,4 +1,20 @@
 <?php
+/*
+class RegistersUsers 
+{
+    protected $mailer;
+
+    public function __construct(Mailer $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
+    public function setMailer(Mailer $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+} */
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +37,16 @@ Route::get('about', function() {
     return view('pages.about'); //resources/views/pages/about.blade.php
 }); */
 
-Route::get('/', 'PagesController@home');
+Route::get('/begin', function (){
+    //Session::flash('status', 'Hello There');
+    flash('You are now signed in!', 'success');
+
+    return redirect('/');
+});
+//Route::get('/', 'PagesController@home');
+Route::get('/', function() {
+    return view('welcome');
+});
 Route::get('about', 'PagesController@about');
 
 Route::get('cards', 'CardsController@index');

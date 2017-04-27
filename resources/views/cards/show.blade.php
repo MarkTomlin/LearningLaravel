@@ -9,8 +9,10 @@
                 @foreach ($card->notes as $note)
                     <li class="list-group-item">
                         {{ $note->body }}
+                        <!-- Need to replace -->
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!-- Need to replace -->
                         Author: {{ $note->user->username }}
                         <a href="{{route('notes.edit.get',['note_id'=>$note->id])}}" style="float:right">EDIT</a> 
                     </li>
