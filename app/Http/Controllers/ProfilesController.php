@@ -26,23 +26,25 @@ class ProfilesController extends Controller
 
     public function update(Request $request, Profile $profile)
     {
+       
         $file =$request->file('fileToUpload');
         $imagename = $profile->id.'image.jpg'; //gives image file name unique to profile id 
-        Storage::put($imagename,$file);
+        
+        Storage::put($imagename,file_get_contents($request->file('fileToUpload')->getRealPath()));
 
         //$profile->image = $imagepath;
-       
-        $contents = Storage::get($imagename);
+        // $imagename = $file->getClient; //gives image file name unique to profile id
+        //$contents = Storage::get($imagename);
+        
+        
         //dd($request->file('fileToUpload'));
         // dd('hit');  // test to see if method accessed
         //dump($request); die;
         //$profile = Profile::find($profile);
         //dump($profile);die;
         
-        //Set profile image to image path 
-        //$profile->image = "images/". basename( $_FILES["fileToUpload"]["name"]); 
         //Updates Profile database entry
-        $profile->image = $contents;
+        $profile->image = 'storage/app/public/'.$imagename;
         $profile->update($request->all()); 
 
         return back();
