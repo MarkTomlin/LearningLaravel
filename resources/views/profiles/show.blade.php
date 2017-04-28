@@ -21,11 +21,14 @@
                     <input type="email" class="form-control" name="email" placeholder="{{ $profile->email }}">
                 </div>
                 <div class="form-group">
-                    <label for="fileToUpload">Profile Image:</label>
-                    <img src="{{ $profile->image }}"></img>
+                    <label for="displayedImage">Profile Image:</label>
+                    <img src="http://localhost/project_name/{{ $profile->image }}" id="displayedImage"></img>
+                </div>
+                <div class="form-group" align="center">
+                    <label for="fileToUpload">Change profile image:</label>
                     <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
-                <div class="form-group">
+                <div class="form-group" align="center">
                     <br /> <br />
                     <button type="submit" class="btn btn-primary">Update Profile</button>
                 </div>
