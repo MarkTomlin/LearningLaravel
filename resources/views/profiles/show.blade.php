@@ -22,6 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fileToUpload">Profile Image:</label>
+                    <img src="{{ $profile->image }}"></img>
                     <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
                 <div class="form-group">
