@@ -29,12 +29,12 @@ class ProfilesController extends Controller
         //dump($request); die;
         //$profile = Profile::find($profile);
         //dump($profile);die;
-
         /*
-        $target_dir = "uploads/";
+        $target_dir = "/images";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
         // Check if image file is a actual image or fake image
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -46,6 +46,7 @@ class ProfilesController extends Controller
                 $uploadOk = 0;
             }
         }
+        
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" &&  $imageFileType != "gif" ) {
             echo "Sorry, only JPG, PNG & GIF files are allowed.";
@@ -65,10 +66,10 @@ class ProfilesController extends Controller
             }
         }
 
-        //Set profile image to image path */
-
+        //Set profile image to image path 
+        $profile->image = "images/". basename( $_FILES["fileToUpload"]["name"]); */
         //Updates Profile database entry
-        $profile->update($request->all());
+        $profile->update($request->all()); 
 
         return back();
     }

@@ -18,7 +18,7 @@ class CreateProfilesTable extends Migration
             $table->string('lname');
             $table->string('email')->unique();
             $table->string('password');
-            $table->binary('image');
+            $table->string('image');
             $table->timestamps();
         });
     }
