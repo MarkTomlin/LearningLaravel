@@ -31,6 +31,10 @@
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </form>
+
+            <div style="margin-top: 200px">
+                <a href="http://localhost/project_name/public/profiles">Back to Profiles list</a>
+            </div>
         </div>
     </div>
 @stop

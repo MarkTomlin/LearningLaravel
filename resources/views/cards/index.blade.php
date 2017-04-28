@@ -8,8 +8,7 @@
             <a href="http://localhost/project_name/public/cards/{{ $card->id }}">{{ $card->title }}</a>
         </div>
     @endforeach
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <div>
+    <div style="margin-top: 200px">
         <a href="http://localhost/project_name/public/profiles">Profiles Page</a>
     </div>
 @stop
