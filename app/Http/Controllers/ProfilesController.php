@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use File;
 use App\Profile;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -28,7 +28,26 @@ class ProfilesController extends Controller
     {
        
         $file =$request->file('fileToUpload');
-        $imagename = $profile->id.'image.jpg'; //gives image file name unique to profile id 
+        $type = File::mimeType($file);
+        //dd($type);
+
+        if ($type == 'image/jpeg')
+        {
+             $imagename = $profile->id.'image.jpg'; //gives image file name unique to profile id 
+        }
+        else if ($type == 'image/png')
+        {
+             $imagename = $profile->id.'image.png';
+        }
+        else if ($type == 'image/gif')
+        {
+             $imagename = $profile->id.'image.gif';
+        }
+        else 
+        {
+            echo "File type not supported <br /><br />";
+            echo "<a href='http://localhost/project_name/public/profiles/{{$profile->id}}/view'>Back</a>";
+        }
         
         Storage::put($imagename,file_get_contents($request->file('fileToUpload')->getRealPath()));
 
